@@ -1,4 +1,4 @@
-import { deleteNoteServices } from "../../services/noteServices";
+import { noteServices } from "../../services/noteServices/index.js";
 
 export const deleteNoteController = async (req, res) => {
   // console.log(Note)
@@ -9,7 +9,7 @@ export const deleteNoteController = async (req, res) => {
     if (!id) {
       return res.status(500).json({ success: false, message: "id invalid" });
     }
-    const deleteNote = await deleteNoteServices(id);
+    const deleteNote = await noteServices.deleteNoteServices(id);
 
     const response = {
       success: true,

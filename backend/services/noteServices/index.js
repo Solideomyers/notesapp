@@ -1,15 +1,30 @@
-import createNotesServices from "./createNotesServices";
-import deleteNotesServices from "./deleteNotesServices";
-import updateNotesServices from "./updateNotesServices";
-import listNotesServices from "./listNotesServices";
-import listNotesByCatServices from "./listNotesByCatServices";
-import destroyNotesServices from "./destroyNotesServices";
+// import { createNotesServices } from "./createNotesServices.js";
+// import { deleteNoteServices } from "./deleteNotesServices.js";
+// import { updateNotesServices } from "./updateNotesServices.js";
+// import { listNoteServices } from "./listNotesServices.js";
+// import { listNoteByCatServices } from "./listNotesByCatServices.js";
+// import { destroyNoteServices } from "./destroyNotesServices.js";
 
-export default {
-  ...createNotesServices,
-  ...updateNotesServices,
-  ...listNotesServices,
-  ...listNotesByCatServices,
-  ...deleteNotesServices,
-  ...destroyNotesServices,
+// export default {
+//   ...createNotesServices,
+//   ...updateNotesServices,
+//   ...listNoteServices,
+//   ...listNoteByCatServices,
+//   ...deleteNoteServices,
+//   ...destroyNoteServices,
+// };
+import { createNotesServices } from "./createNotesServices.js";
+import { deleteNoteServices } from "./deleteNotesServices.js";
+import { updateNotesServices } from "./updateNotesServices.js";
+import { listNoteServices } from "./listNotesServices.js";
+import { listNoteByCatServices } from "./listNotesByCatServices.js";
+import { destroyNoteServices } from "./destroyNotesServices.js";
+
+export const noteServices = {
+  createNotesServices,
+  updateNotesServices,
+  listNoteServices,
+  listNoteByCatServices,
+  deleteNoteServices,
+  destroyNoteServices,
 };

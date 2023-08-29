@@ -1,10 +1,10 @@
-import { Category } from "../../db";
+import { models } from "../../db.js";
 
 export const deleteCategoryServices = async (id) => {
   //    console.log(Category)
 
   try {
-    const newCategory = await Category.findByPk(id);
+    const newCategory = await models.Category.findByPk(id);
     await newCategory.set({ actived: false });
     newCategory.save();
     return newCategory;

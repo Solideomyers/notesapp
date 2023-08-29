@@ -1,7 +1,8 @@
-import { createCategoryServices } from "../../services/categoryServices";
+import { categoryServices } from "../../services/categoryServices/index.js";
 
 export const createCategoryController = async (req, res) => {
   const { name, actived } = req.body;
+  console.log("categoryServices: ", categoryServices);
 
   try {
     const data = {
@@ -9,7 +10,7 @@ export const createCategoryController = async (req, res) => {
       actived,
     };
 
-    const newCategory = await createCategoryServices(data);
+    const newCategory = await categoryServices.createCategoryServices(data);
     if (!newCategory) {
       return res.status(500).json({ success: false, message: "bad request" });
     }
@@ -21,7 +22,7 @@ export const createCategoryController = async (req, res) => {
 
     return res.status(201).json(response);
   } catch (error) {
-    // console.error('CategoryController', error);
+    console.error("CategoryController", error);
     res.status(500).json({ message: "failed to create Category" });
   }
 };

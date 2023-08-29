@@ -1,4 +1,4 @@
-import { updateCategoryServices } from "../../services/categoryServices";
+import { categoryServices } from "../../services/categoryServices/index.js";
 
 export const updateCategoryController = async (req, res) => {
   // console.log(Category)
@@ -9,7 +9,10 @@ export const updateCategoryController = async (req, res) => {
     if (!id) {
       return res.status(500).json({ success: false, message: "id invalid" });
     }
-    const updateCategory = await updateCategoryServices(body, id);
+    const updateCategory = await categoryServices.updateCategoryServices(
+      body,
+      id
+    );
 
     const response = {
       success: true,

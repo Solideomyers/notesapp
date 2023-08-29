@@ -1,4 +1,4 @@
-import { destroyNoteServices } from "../../services/noteServices";
+import { noteServices } from "../../services/noteServices/index.js";
 
 export const destroyNoteController = async (req, res) => {
   // console.log(Note)
@@ -9,7 +9,7 @@ export const destroyNoteController = async (req, res) => {
     if (!id) {
       return res.status(500).json({ success: false, message: "id invalid" });
     }
-    const destroyNote = await destroyNoteServices(id);
+    const destroyNote = await noteServices.destroyNoteServices(id);
 
     const response = {
       success: true,

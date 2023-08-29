@@ -1,13 +1,13 @@
-import { Category, Note } from "../../db";
+import { models } from "../../db.js";
 
 export const updateNotesServices = async (data, id) => {
   try {
-    const note = await Note.findByPk(id);
+    const note = await models.Note.findByPk(id);
 
     if (data && data.category) {
       const existingCategories = await Promise.all(
         data.category.map(async (categoryName) => {
-          const cat = await Category.findOne({
+          const cat = await models.Category.findOne({
             where: {
               name: categoryName,
             },

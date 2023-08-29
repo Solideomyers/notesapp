@@ -1,4 +1,4 @@
-import { updateNotesServices } from "../../services/noteServices";
+import { noteServices } from "../../services/noteServices/index.js";
 
 export const updateNoteController = async (req, res) => {
   // console.log(Note)
@@ -10,7 +10,7 @@ export const updateNoteController = async (req, res) => {
     const body = req.body;
     // console.log(body)
 
-    const updateNote = await updateNotesServices(body, id);
+    const updateNote = await noteServices.updateNotesServices(body, id);
 
     const response = {
       success: true,

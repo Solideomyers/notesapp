@@ -1,4 +1,4 @@
-import { listNoteByCatServices } from "../../services/noteServices";
+import { noteServices } from "../../services/noteServices/index.js";
 
 export const listNoteByCatController = async (req, res) => {
   const { category } = req.query;
@@ -6,7 +6,7 @@ export const listNoteByCatController = async (req, res) => {
     if (!category) {
       return res.status(500).json({ success: false, message: "bad request" });
     }
-    const newNote = await listNoteByCatServices(category);
+    const newNote = await noteServices.listNoteByCatServices(category);
 
     const response = {
       success: true,

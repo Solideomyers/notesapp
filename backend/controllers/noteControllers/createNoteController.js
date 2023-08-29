@@ -1,4 +1,4 @@
-import { createNotesServices } from "../../services/noteServices/index.js";
+import { noteServices } from "../../services/noteServices/index.js";
 
 export const createNoteController = async (req, res) => {
   // console.log(Note)
@@ -15,7 +15,7 @@ export const createNoteController = async (req, res) => {
     if (!title || !content) {
       return res.status(500).json({ success: false, message: "bad request" });
     }
-    const newNote = await createNotesServices(
+    const newNote = await noteServices.createNotesServices(
       title,
       content,
       archived,

@@ -1,4 +1,4 @@
-import { listNoteServices } from "../../services/noteServices";
+import { noteServices } from "../../services/noteServices/index.js";
 
 export const listNoteController = async (req, res) => {
   const { actived = "true", archived = "false", category } = req.query;
@@ -7,7 +7,11 @@ export const listNoteController = async (req, res) => {
     const isActived = actived === "true";
     const isArchived = archived === "true";
 
-    const newNote = await listNoteServices(isArchived, isActived, category);
+    const newNote = await noteServices.listNoteServices(
+      isArchived,
+      isActived,
+      category
+    );
 
     if (newNote.length === 0) {
       return res.status(200).json({ message: "There is not note" });

@@ -1,12 +1,12 @@
-import { Note, Category } from "../../db";
+import { models } from "../../db.js";
 
 export const listNoteByCatServices = async (category) => {
   //    console.log(Note)
   try {
-    const newNote = await Note.findAll({
+    const newNote = await models.Note.findAll({
       where: { archived: false },
       include: {
-        model: Category,
+        model: models.Category,
         where: { name: category },
       },
     });

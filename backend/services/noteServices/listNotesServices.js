@@ -1,4 +1,4 @@
-import { Note, Category } from "../../db";
+import { models } from "../../db.js";
 
 export const listNoteServices = async (
   archived = false,
@@ -15,9 +15,9 @@ export const listNoteServices = async (
       whereClause["$Category.name$"] = category;
     }
 
-    const newNote = await Note.findAll({
+    const newNote = await models.Note.findAll({
       where: whereClause,
-      include: Category,
+      include: models.Category,
     });
 
     return newNote;

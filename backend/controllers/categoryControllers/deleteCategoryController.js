@@ -1,4 +1,4 @@
-import { deleteCategoryServices } from "../../services/categoryServices";
+import { categoryServices } from "../../services/categoryServices/index.js";
 
 export const deleteCategoryController = async (req, res) => {
   // console.log(Category)
@@ -10,7 +10,7 @@ export const deleteCategoryController = async (req, res) => {
     if (!id) {
       return res.status(500).json({ success: false, message: "id invalid" });
     }
-    const deleteCategory = await deleteCategoryServices(id);
+    const deleteCategory = await categoryServices.deleteCategoryServices(id);
     const response = {
       success: true,
       message: "delete successfully",

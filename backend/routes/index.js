@@ -1,5 +1,9 @@
-import { express } from "express";
+import express from "express";
+import { categoryRouter } from "./categoryRoutes.js";
+import { noteRouter } from "./notesRoutes.js";
 
-export const router = express.Router();
+const router = express.Router();
 
-router.use("/", "proof");
+router.use("/notes", noteRouter);
+router.use("/categories", categoryRouter);
+export default router;

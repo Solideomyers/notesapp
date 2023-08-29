@@ -1,10 +1,10 @@
-import { Note } from "../../db";
+import { models } from "../../db.js";
 
 export const deleteNoteServices = async (id) => {
   //    console.log(Note)
 
   try {
-    const newNote = await Note.findByPk(id);
+    const newNote = await models.Note.findByPk(id);
 
     await newNote.set({ actived: false });
 

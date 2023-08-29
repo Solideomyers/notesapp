@@ -1,4 +1,4 @@
-import { Note, Category } from "../../db";
+import { models } from "../../db.js";
 
 export const createNotesServices = async (
   title,
@@ -11,14 +11,14 @@ export const createNotesServices = async (
     let newNote;
 
     // Create the note
-    newNote = await Note.create({ title, content, archived, actived });
+    newNote = await models.Note.create({ title, content, archived, actived });
 
     // Find or create the category
     let existingCategory;
     if (category) {
       existingCategory = await Promise.all(
         category.map(async (categoryName) => {
-          const cat = await Category.findOne({
+          const cat = await models.Category.findOne({
             where: {
               name: categoryName,
             },

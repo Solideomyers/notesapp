@@ -1,9 +1,9 @@
-import { listCategoryServices } from "../../services/categoryServices";
+import { categoryServices } from "../../services/categoryServices/index.js";
 
 export const listCategoryController = async (req, res) => {
   // console.log(title, content)
   try {
-    const newCategory = await listCategoryServices();
+    const newCategory = await categoryServices.listCategoryServices();
     if (!newCategory) {
       return res.status(500).json({ success: false, message: "bad request" });
     }

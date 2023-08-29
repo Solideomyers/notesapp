@@ -1,10 +1,10 @@
-import { Note } from "../../db";
+import { models } from "../../db.js";
 
 export const destroyNoteServices = async (id) => {
   //    console.log(Note)
 
   try {
-    const newNote = await Note.destroy({ where: { id } });
+    const newNote = await models.Note.destroy({ where: { id } });
     return newNote;
   } catch (error) {
     // console.error('function by destroy notes', error);
