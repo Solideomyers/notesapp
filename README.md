@@ -1,4 +1,3 @@
-
 # Notes App - Interview
 
 ### Requirements
@@ -10,38 +9,44 @@ development is divided in two phases:
 - Phase 2: tag application and filtering
 
 ### Importan considerations
+
 - Content should be persisted in a relational database by using an ORM
 
 ### Technologies
+
 - Structure the app as a Single Page web Application, i.e. frontend and backend are different
-apps. That is the general case when you use React, Angular, Vue.js or any other similar UI
-framework. Please consider that rendering a web page on the server-side (by using JSP, EJS,
-Smarty, Blade, etc.) but using a bit of JS to, for instance, fetch some data, is not a pure SPA.
-You need to implement an isolated app, in a separate folder, with its custom package.json
-and dependencies.
+  apps. That is the general case when you use React, Angular, Vue.js or any other similar UI
+  framework. Please consider that rendering a web page on the server-side (by using JSP, EJS,
+  Smarty, Blade, etc.) but using a bit of JS to, for instance, fetch some data, is not a pure SPA.
+  You need to implement an isolated app, in a separate folder, with its custom package.json
+  and dependencies.
 - The backend app exposes a REST API that is the way in which the frontend app
-communicates with the backend
+  communicates with the backend
 - The backend app is separated into layers (e.g., Controllers, Services, DAOs/Repositories, etc.).
 
 ### User stories
 
 #### Phase 1
+
 - As a user, I want to be able to create, edit and delete notes
 - As a user, I want to archive/unarchive notes
 - As a user, I want to list both my active notes
 - As a user, I want to list both my archived notes
 
 #### Phase 2
+
 - As a user, I want to be able to add/remove categories to notes
 - As a user, I want to be able to filter notes by category
 
 ### Extra points
+
 - Deploy
 - Login
 
 ## Contributing
 
-* Francisco A. Myers - [![Linkedin]](https://www.linkedin.com/in/franciscomyers/) [![Github]](https://github.com/Solideomyers)
+- Francisco A. Myers - [![Linkedin]](https://www.linkedin.com/in/franciscomyers/) [![Github]](https://github.com/Solideomyers)
+
 ## Built With
 
 [![HTMLl5][html5]][html-url][![CSS3][css3]][css-url][![Javascript][javascript]][js-url]
@@ -81,3 +86,29 @@ communicates with the backend
 [pgsql]: https://img.shields.io/badge/Postgresql-4169E1?style=for-the-badge&logo=Postgresql&logoColor=white
 [pgsql-url]: http://postgresql.org/
 [Linkedin]: https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white
+
+## Documentation
+
+### Init project by Windows
+
+- from folder backend to execute comand node setupWin.js
+- then introduce your variables enviroment:
+  - DB_USER
+  - DB_HOST
+  - DB_PASSWORD
+
+### NOTE:
+
+- The databse must be called notesweb
+
+### Init project by Linux and MacOS
+
+- from folder backend to execute comand node setupOs.js
+- then introduce your variables enviroment:
+  - DB_USER
+  - DB_HOST
+  - DB_PASSWORD
+
+### NOTE:
+
+- The databse must be called notesweb
